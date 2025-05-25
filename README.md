@@ -9,12 +9,11 @@ determine si una tienda Oxxo tiene alto potencial de éxito, cumpla con su meta 
 
 ## Propuesta
 - Construcción de una variable de respuesta basada en la tendencia al incremento/decremento de venta de cada tienda.
-- Modelo XGboost para determinar la para determinar la clase 0: "No exitoso" y 1: "Exitoso"
+- Modelo XGboost para determinar las clases 0 (No exitoso) y 1 (Exitoso).
 
 ## One-Page
 - Dashboard de resultados e insights en los datos:
 - [App.R](https://github.com/FedeSS99/Proyecto-Oxxo-F4/blob/main/app.R) : Shiny App
-- [Carpeta de datos](https://github.com/FedeSS99/Proyecto-Oxxo-F4/tree/main/data) : Datos procesados
 - [Modelo XGBoost](https://github.com/FedeSS99/Proyecto-Oxxo-F4/blob/main/02_Pruebas_Modelo.R) : Modelo de predicción de éxito.
 - [Presentación](https://www.canva.com/design/DAGoY2uC-h8/Xd38-62Gd-gB0yyA6qI98g/view?utm_content=DAGoY2uC-h8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf2818e8f1e) : Presentación
 
