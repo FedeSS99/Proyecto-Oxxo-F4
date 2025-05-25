@@ -7,10 +7,17 @@
 #               
 # ------------------------------------------------------------------------------
 
+install.packages('xgboost')
+install.packages('caret')
+install.packages('dplyr')
+
 # Cargar librerías necesarias
 library(xgboost)
 library(caret)
 library(dplyr)
+
+base_modelo_V2 <- read.csv("base_modelo_V2.csv")
+base_modelo_test_V2 <- read.csv("base_modelo_test_V2.csv")
 
 # Convertir a factores
 base_modelo_V2$EXITO_POND <- as.factor(base_modelo_V2$EXITO_POND)
@@ -38,11 +45,11 @@ test_data <- base_modelo_test_V2
 
 # Convertir variables categóricas a dummy variables (one-hot encoding)
 X_train <- model.matrix(EXITO_POND ~ PUERTASREFRIG_NUM + MTS2VENTAS_NUM +
-                         ENTORNO_DES ,
+                          ENTORNO_DES ,
                         data = train_data)[, -1]  # quitar intercepto
 
 X_test <- model.matrix(EXITO_POND ~ PUERTASREFRIG_NUM + MTS2VENTAS_NUM +
-                          ENTORNO_DES ,
+                         ENTORNO_DES ,
                        data = test_data)[, -1]
 
 # Convertir la variable respuesta a numérica binaria (0/1)
@@ -58,8 +65,9 @@ dtest <- xgb.DMatrix(data = X_test, label = y_test)
 parametros <- list(
   objective = "binary:logistic",
   eval_metric = "logloss",
-  max_depth = 4,
-  eta = 0.1
+  max_depth = 6,
+  eta = 0.1,
+  subsample = 0.5
 )
 
 modelo_xgb <- xgb.train(
@@ -84,17 +92,3 @@ confusionMatrix(
 
 importancia <- xgb.importance(model = modelo_xgb)
 xgb.plot.importance(importancia, top_n = 10)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
