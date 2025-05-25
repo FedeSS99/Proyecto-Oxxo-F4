@@ -16,6 +16,7 @@ determine si una tienda Oxxo tiene alto potencial de éxito, cumpla con su meta 
 - [App.R](https://github.com/FedeSS99/Proyecto-Oxxo-F4/blob/main/app.R) : Shiny App
 - [Carpeta de datos](https://github.com/FedeSS99/Proyecto-Oxxo-F4/tree/main/data) : Datos procesados
 - [Modelo XGBoost](https://github.com/FedeSS99/Proyecto-Oxxo-F4/blob/main/02_Pruebas_Modelo.R) : Modelo de predicción de éxito.
+- [Presentación](https://www.canva.com/design/DAGoY2uC-h8/Xd38-62Gd-gB0yyA6qI98g/view?utm_content=DAGoY2uC-h8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf2818e8f1e) : Presentación
 
 ## Descripción de la métrica de Éxito:
 La métrica propuesta se construyó utilizando también las diferencias de las *Ventas/Venta Meta*, pero ahora contaremos con $a_{ponderada}$ y $b_{ponderada}$ que toma en cuenta las magnitudes absolutas de las ganancias/perdidas:
@@ -28,3 +29,5 @@ Es fácil ver que tanto $a$ y $b$ están acotados entre 0 y 1. Además, la suma 
 $$c_{ponderada} = \frac{a_{ponderada} - b_{ponderada}}{a_{ponderada} + b_{ponderada}}$$
 
 Esta última cantidad se localiza entre -1 y 1; siendo $c_{ponderada} = -1$ indicador de una tienda con únicamente perdidas y $c_{ponderada} = 1$ indicador de una tienda con únicamente ganancias.
+
+
